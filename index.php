@@ -1,10 +1,36 @@
+<?php
+   $BDProductos = array(0,"CERO",0,"");
+ $i=0; $iProductos=1; 
+ $filas=file('archivo.txt'); 
+ 
+ foreach($filas as $value){
+    list($id, $producto, $precio, $categoria) = explode(",", $value);
+    array_push($BDProductos, $id);
+    array_push($BDProductos, $producto);
+    array_push($BDProductos, $precio);
+    array_push($BDProductos, $categoria);
+    $iProductos++;
+  }
+
+  $BDAlmacen = array( 
+    array(1, 2, 3, 4, 5), //El IDProducto
+    array(0,10, 5,15, 3)); //Las Existencias
+
+  $iAlmacen = 2; //El No. de existencias
+  $BDVentas = array(
+    array(2,3), //El IDProducto
+    array(2,1), //La Cantidad
+    array(700, 200)); //El Monto
+  $iVentas = 2; //El No. de ventas al momento
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Software Punto de Venta" content="">
-    <meta name="De La Cruz Yusalin Mercado Lesly" content="">
+    <meta name="Luciano Bustamante" content="">
     <title>Inicio | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -32,8 +58,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +52 618 260 5011</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> yusalinylesly@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +52 618 120 56 89</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> luciano bustamante@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -52,11 +78,13 @@
 							<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
 						</div>						
 					</div>
-					<H3>SOFTWARE PUNTO DE VENTA</H3>
+					<H3>SOFTWARE PUNTO DE VENTA </H3>
 					<div class="col-sm-8">
-						Por: De La Cruz Yusalin Mercado Lesly
+						Por: LUCIANO BUSTAMANTE y PEÑA SARACHO
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
+								<li><a href="agregarproducto.php" target="_blank"><i class="fa fa-plus"></i>Agregar
+								</a></li>
 								<li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Pagar</a></li>
 								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
 								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
@@ -149,7 +177,8 @@
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Categoría 1</a></h4>
+									<h4 class="panel-title"><a href="#">Damas</a></h4>
+									<h4 class="panel-title"><a href="#">Caballeros</a></h4>
 								</div>
 							</div>
 						</div><!--/category-products-->
@@ -164,26 +193,36 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Catálogo de Productos</h2>
+					     	<?php
+					     	    $n=4;
+                      for ($i=1; $i < $iProductos;$i++){ 
+                             ?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="images/home/product1.jpg" alt="" />
-											<h2>$56</h2>
-											<p>Producto 1</p>
+								           <?php
+								           $img = $BDProductos[$n];
+								           ?>
+											<img src="images/home/<?php echo $img; ?>.jpg" width = "210" height = "180" alt="" />
+											<h2><?php echo $BDProductos[$n+2]; ?> </h2>
+											<p><?php echo $BDProductos[$n+1];?></p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2>$56</h2>
-												<p>Producto 1</p>
+												<h2><?php echo $BDProductos [$n+1]; ?> </h2>
+												<p><?php echo $BDProductos [$n+2]; ?></p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 											</div>
 										</div>
 								</div>								
 							</div>
 						</div>
-						
+						<?php 
+						    $n+=4;
+					       } 
+					?>
 					</div><!--features_items-->
 					
 					
@@ -201,6 +240,19 @@
 													<img src="images/home/recommend1.jpg" alt="" />
 													<h2>$50</h2>
 													<p>Producto Esp 1</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/recommend1.jpg" alt="" />
+													<h2>$150</h2>
+													<p>Producto Esp 2</p>
 													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 												</div>
 												
