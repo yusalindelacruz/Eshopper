@@ -182,7 +182,16 @@
 						</tr>
 					</thead>
 					<tbody>
+						<?php
+  if(file_exists('carritocompras.txt')){
+    $content = trim(file_get_contents('carritocompras.txt'), PHP_EOL);
+    $lineas = explode(PHP_EOL, $content);
+    $total=0;
+    foreach($lineas as $linea){
+      list($productoE, $precioE) = explode(',', $linea);  
+     ?>
 						<tr>
+
 							<td class="cart_product">
 								<a href=""><img src="images/cart/one.png" alt=""></a>
 							</td>
@@ -207,18 +216,18 @@
 								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
-												
+
 						<tr>
 							<td colspan="4">&nbsp;</td>
 							<td colspan="2">
 								<table class="table table-condensed total-result">
 									<tr>
 										<td>Sub Total</td>
-										<td>$0</td>
+										<td><?php echo $total;?></td>
 									</tr>
 									<tr>
 										<td>Impuestos</td>
-										<td>$0</td>
+										<td><?php echo $total * .16;?>/td>
 									</tr>
 									<tr class="shipping-cost">
 										<td>Costo de Envío</td>
@@ -226,11 +235,16 @@
 									</tr>
 									<tr>
 										<td>Total</td>
-										<td><span>$0</span></td>
+										<td><span><?php echo $total + ($total * .16);?></span></td>
 									</tr>
 								</table>
 							</td>
 						</tr>
+						<?php
+							$total = $total + $precioE;
+						}
+					}
+							?>			
 					</tbody>
 				</table>
 			</div>

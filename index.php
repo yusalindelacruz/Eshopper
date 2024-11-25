@@ -30,7 +30,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Software Punto de Venta" content="">
-    <meta name="LeslymercadoYusalindelacruz" content="">
+    <meta name="Lesly mercado yusalin de la cruz" content="">
     <title>Inicio | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 								<li><a href="#"><i class="fa fa-phone"></i> +52 618 284 4541</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> LeslymercadoYusalindelacruz@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> leslymercadoylayusalin@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -80,7 +80,7 @@
 					</div>
 					<H3>SOFTWARE PUNTO DE VENTA </H3>
 					<div class="col-sm-8">
-						Por: LeslymercadoYusalindelacruz
+						Por: leslymercado yusalindelacruz
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="agregarproductos.php" target="_blank"><i class="fa fa-plus"></i>Agregar</a></li>
