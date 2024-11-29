@@ -1,9 +1,8 @@
-1, Blusa,100,Damas
+1,  Blusa,100,Damas
 2, Lentes,380,Caballeros
-3, Playera Azul,250,Caballeros
+3, Playera Azul,250,Hombre
 4, Blusa Ligera,100,Damas
 5, Vestido,450,Damas
-6, Playera Roja,300,CAballeros
+6, Playera Roja,300,Caballeros
 7, Calcetines,80,Caballeros
-8, Camisa Negra,200,Caballero
 , ,,

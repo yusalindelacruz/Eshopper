@@ -144,7 +144,6 @@
     $total=0;
     foreach($lineas as $linea){
       list($productoE, $precioE) = explode(',', $linea);
-         
      ?>
 						<tr>
 							<td class="cart_product">
