@@ -1,6 +1,6 @@
 <?php
 session_start();
-$usuario = $_SESSION["usuario"];
+$usuario =$_SESSION["usuario"];
 $email = $_SESSION["email"];
 
   $BDProductos = array(0,"CERO",0,"");
@@ -11,6 +11,7 @@ $email = $_SESSION["email"];
     list($id, $producto, $precio, $categoria) = explode(",", $value);
     array_push($BDProductos, $id);
     array_push($BDProductos, $producto);
+    //en esta parte aparecia un error en la linea 7 y 9 :/
     array_push($BDProductos, $precio);
     array_push($BDProductos, $categoria);
     $iProductos++;
@@ -28,13 +29,14 @@ $email = $_SESSION["email"];
   $iVentas = 2; //El No. de ventas al momento
 ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Software Punto de Venta" content="">
-    <meta name="Lesly Mercado y Yusalin De La Cruz" content="">
+    <meta name="lESLYMERCADO YUSALINDELACRUZ" content="">
     <title>Inicio | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -62,11 +64,12 @@ $email = $_SESSION["email"];
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +52 618 284 4541</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +52 671 899 6542</a></li>
 								<font color="green">
 <li> Usuario: <?php echo $usuario; ?></li>
 <li> Correo <i class="fa fa-envelope"></i>:<?php echo $email; ?></li>
 </font>
+								
 							</ul>
 						</div>
 					</div>
@@ -85,9 +88,9 @@ $email = $_SESSION["email"];
 							<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
 						</div>						
 					</div>
-					<H3>SOFTWARE PUNTO DE VENTA </H3>
+					<H3>SOFTWARE PUNTO DE VENTA</H3>
 					<div class="col-sm-8">
-						Por: Lesly Mercado y yusalin De La Cruz
+						Por: LESLYMERCADO YUSALINDELACRUZ
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="agregarproductos.php" target="_blank"><i class="fa fa-plus"></i>Agregar</a></li>
@@ -183,8 +186,8 @@ $email = $_SESSION["email"];
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">DAMAS</a></h4>
-									<h4 class="panel-title"><a href="#">CABALLEROS</a></h4>
+									<h4 class="panel-title"><a href="#">Damas</a></h4>
+									<h4 class="panel-title"><a href="#">Caballeros</a></h4>
 								</div>
 							</div>
 						</div><!--/category-products-->
@@ -198,39 +201,43 @@ $email = $_SESSION["email"];
 				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Catálogo de Productos</h2>
+						<h2 class="title text-center">Catalogo de productos</
+						h2>
 						<?php
-						            $n=4;
-                        for ($i=1; $i< $iProductos;$i++){   
-                        ?>
+						$n=4;
+						    for ($i=1; $i < $iProductos; $i++){
+
+						?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<?php
-											$img = $BDProductos[$n];
-											$productoB = $BDProductos[$n+1];
-											$precioB = $BDProductos[$n+2];
+											$img = $BDProductos [$n];
+											$productoB = $BDProductos [$n+1];
+											$precioB = $BDProductos [$n+2]
 											?>
-											<img src="images/home/<?php echo $img; ?>.jpg" width="210" height="180" alt="" />
+											<img src="images/home/<?php echo $img;?>
+											.jpg" width ="210" height="180"alt="" />
 											<h2><?php echo $productoB; ?></h2>
-											<p><?php echo $precioB; ?></p>
-											<a href="cart.php?producto=<?php echo $productoB;?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
-											<h2><?php echo $productoB; ?></h2>
-											<p><?php echo $precioB; ?></p>
+											<p><?php echo $precioB; ?> </p>
+											<a href="cart.php?producto=<?php echo $productoB; ?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<a href="cart.php?producto=<?php echo $productoB;?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+												<h2><?php echo $precioB ; ?> </h2>
+												<p><?php echo $productoB; ?></p>
+												<a href="cart.php?producto=<?php echo $productoB; ?>&precio=<?php echo $precioB;?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 											</div>
 										</div>
 								</div>								
 							</div>
 						</div>
-						<?php 
-						$n+=4;
-					} 
-					?>
+					<?php 
+					$n+=4;
+				} 
+				?>
+						
 					</div><!--features_items-->
 					
 					
@@ -259,7 +266,7 @@ $email = $_SESSION["email"];
 											<div class="single-products">
 												<div class="productinfo text-center">
 													<img src="images/home/recommend1.jpg" alt="" />
-													<h2>$150</h2>
+													<h2>$50</h2>
 													<p>Producto Esp 2</p>
 													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 												</div>

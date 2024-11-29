@@ -2,9 +2,9 @@
 
 Sitio WEB de Punto de Venta de Ropa
 
-Creado por: Joshua Armando Perez Martinez
-Fecha: 28 Octubre 2024
+Creado por: Jose Alejandro Cisneros
+Fecha: 28 de Octubre 2024
 
-Proyecto Final del submodulo
+Proyecto Final de Submodulo
 
-3o Programacion Vespertino
+3o de programacion Vesp
